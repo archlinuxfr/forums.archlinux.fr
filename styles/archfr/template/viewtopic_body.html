@@ -15,7 +15,6 @@
 <!-- ENDIF -->
 
 <div id="pageheader">
-	<h2><a class="titles" href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a></h2>
 
 <!-- IF MODERATORS -->
 	<p class="moderators"><!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->: {MODERATORS}</p>
@@ -31,22 +30,26 @@
 
 	<table width="100%" cellspacing="1">
 	<tr>
-		<td align="{S_CONTENT_FLOW_BEGIN}" valign="middle" nowrap="nowrap">
-		<!-- IF not S_IS_BOT -->
-			<!-- IF S_DISPLAY_POST_INFO --><a href="{U_POST_NEW_TOPIC}">{POST_IMG}</a>&nbsp;<!-- ENDIF -->
-			<!-- IF S_DISPLAY_REPLY_INFO --><a href="{U_POST_REPLY_TOPIC}">{REPLY_IMG}</a><!-- ENDIF -->
-		<!-- ENDIF -->
-		</td>
 		<!-- IF TOTAL_POSTS -->
-			<td class="nav" valign="middle" nowrap="nowrap">&nbsp;{PAGE_NUMBER}<br /></td>
+			<td class="gensmall" align="{S_CONTENT_FLOW_BEGIN}" nowrap="nowrap"><!-- INCLUDE pagination.html --></td>
 			<td class="gensmall" nowrap="nowrap">&nbsp;[ {TOTAL_POSTS} ]&nbsp;</td>
-			<td class="gensmall" width="100%" align="{S_CONTENT_FLOW_END}" nowrap="nowrap"><!-- INCLUDE pagination.html --></td>
+		<!-- ENDIF -->
+				<td class="gensmall" width="100%" nowrap="nowrap">
+				  <p class="breadcrumbs"><a href="{U_INDEX}">{L_INDEX}</a>
+				  <!-- BEGIN navlinks --> 
+				    &#187; <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a>
+				  <!-- END navlinks -->
+				  &#187; {TOPIC_TITLE}
+				  </p>
+				</td>
+		<!-- IF S_DISPLAY_POST_INFO and not S_IS_BOT -->
+			<td align="{S_CONTENT_FLOW_END}" valign="middle" nowrap="nowrap"><a href="{U_POST_REPLY_TOPIC}">{L_POST_REPLY}</a></td>
 		<!-- ENDIF -->
 	</tr>
 	</table>
 
 	<table class="tablebg" width="100%" cellspacing="1">
-	<tr>
+	<tr style="display: none;">
 		<td class="cat">
 			<table width="100%" cellspacing="0">
 			<tr>
@@ -128,12 +131,6 @@
 
 <!-- BEGIN postrow -->
 	<table class="tablebg" width="100%" cellspacing="1">
-	<!-- IF postrow.S_FIRST_ROW -->
-		<tr>
-			<th>{L_AUTHOR}</th>
-			<th>{L_MESSAGE}</th>
-		</tr>
-	<!-- ENDIF -->
 	<!-- IF postrow.S_ROW_COUNT is even --><tr class="row1"><!-- ELSE --><tr class="row2"><!-- ENDIF -->
 
 	<!-- IF postrow.S_IGNORE_POST -->
@@ -155,16 +152,11 @@
 				</table>
 			</td>
 		</tr>
-
+		
 		<!-- IF postrow.S_ROW_COUNT is even --><tr class="row1"><!-- ELSE --><tr class="row2"><!-- ENDIF -->
 
 			<td valign="top" class="profile">
 				<table cellspacing="4" align="center" width="150">
-			<!-- IF postrow.ONLINE_IMG -->
-				<tr>
-					<td>{postrow.ONLINE_IMG}</td>
-				</tr>
-			<!-- ENDIF -->
 			<!-- IF postrow.RANK_TITLE -->
 				<tr>
 					<td class="postdetails">{postrow.RANK_TITLE}</td>
@@ -178,11 +170,6 @@
 			<!-- IF postrow.POSTER_AVATAR -->
 				<tr>
 					<td>{postrow.POSTER_AVATAR}</td>
-				</tr>
-			<!-- ENDIF -->
-			<!-- IF not (postrow.ONLINE_IMG or postrow.RANK_TITLE or postrow.RANK_IMG or postrow.POSTER_AVATAR) -->
-				<tr>
-					<td></td>
 				</tr>
 			<!-- ENDIF -->
 				</table>
@@ -305,16 +292,20 @@
 
 	<table width="100%" cellspacing="1">
 	<tr>
-		<td align="{S_CONTENT_FLOW_BEGIN}" valign="middle" nowrap="nowrap">
-		<!-- IF not S_IS_BOT -->
-			<!-- IF S_DISPLAY_POST_INFO --><a href="{U_POST_NEW_TOPIC}">{POST_IMG}</a>&nbsp;<!-- ENDIF -->
-			<!-- IF S_DISPLAY_REPLY_INFO --><a href="{U_POST_REPLY_TOPIC}">{REPLY_IMG}</a><!-- ENDIF -->
-		<!-- ENDIF -->
-		</td>
 		<!-- IF TOTAL_POSTS -->
-			<td class="nav" valign="middle" nowrap="nowrap">&nbsp;{PAGE_NUMBER}<br /></td>
+			<td class="gensmall" align="{S_CONTENT_FLOW_BEGIN}" nowrap="nowrap"><!-- INCLUDE pagination.html --></td>
 			<td class="gensmall" nowrap="nowrap">&nbsp;[ {TOTAL_POSTS} ]&nbsp;</td>
-			<td class="gensmall" width="100%" align="{S_CONTENT_FLOW_END}" nowrap="nowrap"><!-- INCLUDE pagination.html --></td>
+		<!-- ENDIF -->
+				<td class="gensmall" width="100%" nowrap="nowrap">
+				  <p class="breadcrumbs"><a href="{U_INDEX}">{L_INDEX}</a>
+				  <!-- BEGIN navlinks --> 
+				    &#187; <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a>
+				  <!-- END navlinks -->
+				  &#187; {TOPIC_TITLE}
+				  </p>
+				</td>
+		<!-- IF S_DISPLAY_POST_INFO and not S_IS_BOT -->
+		<td align="{S_CONTENT_FLOW_END}" valign="middle" nowrap="nowrap"><a href="{U_POST_REPLY_TOPIC}">{REPLY_IMG}</a></td>
 		<!-- ENDIF -->
 	</tr>
 	</table>
@@ -328,20 +319,6 @@
 <!-- INCLUDE quickreply_editor.html -->
 <!-- ENDIF -->
 
-<!-- INCLUDE breadcrumbs.html -->
-
-<!-- IF S_DISPLAY_ONLINE_LIST -->
-	<br clear="all" />
-
-	<table class="tablebg" width="100%" cellspacing="1">
-	<tr>
-		<td class="cat"><h4>{L_WHO_IS_ONLINE}</h4></td>
-	</tr>
-	<tr>
-		<td class="row1"><p class="gensmall">{LOGGED_IN_USER_LIST}</p></td>
-	</tr>
-	</table>
-<!-- ENDIF -->
 
 <br clear="all" />
 

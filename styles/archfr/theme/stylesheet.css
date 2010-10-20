@@ -12,6 +12,9 @@
     --------------------------------------------------------------
 */
 
+@import url('archnavbar.css');
+#archnavbar ul li#anb-forums a { color: white !important; }
+
 /* Layout
  ------------ */
 * {
@@ -26,14 +29,28 @@ html {
 
 body {
 	/* Text-Sizing with ems: http://www.clagnut.com/blog/348/ */
-	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif; 
 	color: #323D4F;
 	background-color: #FFFFFF;
-	font-size: 62.5%; /* This sets the default font size to be equivalent to 10px */
+	font-size: 70%; /* This sets the default font size to be equivalent to 10px */
 	margin: 0;
+}
+#dev_nav {
+  background: transparent;
+}
+#dev_nav ul { display: inline !important; list-style: none !important; margin: 0 !important; padding: 0 !important; }
+#dev_nav ul li { 
+font-size: 12px !important;
+font-family: sans-serif !important; 
+display: block; 
+float: left; 
+line-height: 26px;
+padding-left: 15px !important; 
+margin-left: 15px;
 }
 
 #wrapheader {
+	min-height: 220px;
 	height: auto !important;
 	padding: 0;
 }
@@ -305,13 +322,13 @@ p.topicdetails {
 /* Tables
  ------------ */
 th {
-	color: #FFA34F;
+	color: #888;
 	font-size: 1.1em;
-	font-weight: bold;
-	background-color: #006699;
-	background-image: url('./images/cellpic3.gif');
+	font-weight: none;
+	background-color: #f9f9f9;
 	white-space: nowrap;
 	padding: 7px 5px;
+	text-align: left;
 }
 
 td {
@@ -333,19 +350,35 @@ td.profile {
 	background: white url('./images/cellpic2.jpg') repeat-y scroll top left;
 }
 .rtl .catdiv {
-	background: white url('./images/cellpic2_rtl.jpg') repeat-y scroll top right;
+	background: white url('./images/cellpic2_rtl.jpg') repeat-y scroll top left;
 }
-
 .cat {
 	height: 28px;
 	margin: 0;
 	padding: 0;
 	border: 0;
 	background-color: #C7D0D7;
-	background-image: url('./images/cellpic1.gif');
 	text-indent: 4px;
 }
 
+.catarch {
+        color: white;
+	height: 28px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/*background-color: #C7D0D7; */
+	background: #333; 
+	/*background-image: url('styles/archfr/theme/images/cellpic1.gif'); */
+	text-indent: 4px;
+        font-family: verdana, "Lucida Grande", Helvetica, Arial, sans-serif;
+        font-size: 120%;
+}
+.catarch h2 a, .catarch h4 a, .catarch h2, .catarch h4 {
+  color: white;
+  font-size: 12px;
+  font-family: verdana, "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 .row1 {
 	background-color: #ECECEC;
 	padding: 4px;
@@ -565,6 +598,11 @@ input.radio {
 	font-family: "Lucida Grande", "Trebuchet MS", Helvetica, Arial, sans-serif;
 	background-color: #FAFAFA;
 	color: #4B5C77;
+
+	overflow: auto;
+	display: block;
+	height: auto;
+	max-height: 200px;
 }
 
 .attachcontent {
@@ -595,6 +633,11 @@ input.radio {
 	font-size: 0.85em;
 	font-family: Monaco, 'Courier New', monospace;
 	background-color: #FAFAFA;
+
+	overflow: auto;
+	display: block;
+	height: auto;
+	max-height: 200px;	
 }
 
 .syntaxbg {

@@ -173,7 +173,11 @@
 
 <tr>
 	<td class="row1" width="22%"><b class="genmed">{L_SUBJECT}:</b></td>
-	<td class="row2" width="78%"><input class="post" style="width:450px" type="text" name="subject" size="45" maxlength="<!-- IF S_NEW_MESSAGE -->60<!-- ELSE -->64<!-- ENDIF -->" tabindex="2" value="{SUBJECT}" /></td>
+	<td class="row2" width="78%"><input class="post" style="width:450px" type="text" name="subject" size="45" maxlength="<!-- IF S_NEW_MESSAGE -->60<!-- ELSE -->64<!-- ENDIF -->" tabindex="2" value="{SUBJECT}" />
+	<!-- IF S_NEW_MESSAGE -->
+	<br/><span style='color: #ff0000; font-size: 12px; font-weight: bold;'>Merci de formater votre sujet suivant la forme "[th&egrave;me] sujet (&eacute;tat)",<br/> cf. <a href="http://forums.archlinux.fr/topic68.html">ici</a> pour plus d'informations.</span><br/>
+	<!-- ENDIF -->
+	</td>
 </tr>
 <!-- IF S_URL -->
 <tr>
@@ -337,11 +341,9 @@
 		<td class="row2"><input class="post" type="text" name="edit_reason" size="50" value="{EDIT_REASON}" /></td>
 	</tr>
 <!-- ENDIF -->
-
 		<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
 		<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
 		<!-- ENDIF -->
-
 
 <!-- IF S_SHOW_ATTACH_BOX or S_SHOW_POLL_BOX -->
 	<tr>

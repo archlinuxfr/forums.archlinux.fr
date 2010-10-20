@@ -26,6 +26,7 @@
 <!-- ENDIF -->
 
 <link rel="stylesheet" href="{T_STYLESHEET_LINK}" type="text/css" />
+<link rel="icon" href="{T_THEME_PATH}/images/favicon.ico" type="image/png" />
 
 <script type="text/javascript">
 // <![CDATA[
@@ -216,68 +217,81 @@ function marklist(id, name, state)
 <body class="{S_CONTENT_DIRECTION}">
 
 <a name="top"></a>
-
-<div id="wrapheader">
-
-	<div id="logodesc">
-		<table width="100%" cellspacing="0">
-		<tr>
-			<td><a href="{U_INDEX}">{SITE_LOGO_IMG}</a></td>
-			<td width="100%" align="center"><h1>{SITENAME}</h1><span class="gen">{SITE_DESCRIPTION}</span></td>
-		</tr>
-		</table>
+<div id="archnavbar" class="anb-forums"> 
+	<div id="archnavbarlogo">
+		<p><a href="#" onclick="return false;" title="Arch Linux">Arch Linux</a></p>
 	</div>
+	<div id="archnavbarmenu">
+		<ul id="archnavbarlist">
+			<li id="anb-home"><a href="http://archlinux.fr">Accueil</a></li>
+			<li id="anb-forums" class="selected" ><a href="http://forums.archlinux.fr/">Forum</a></li>
 
-	<div id="menubar">
-		<table width="100%" cellspacing="0">
-		<tr>
-			<td class="genmed">
-				<!-- IF not S_IS_BOT --><a href="{U_LOGIN_LOGOUT}"><img src="{T_THEME_PATH}/images/icon_mini_login.gif" width="12" height="13" alt="*" /> {L_LOGIN_LOGOUT}</a>&nbsp;<!-- ENDIF -->
-				<!-- IF U_RESTORE_PERMISSIONS --> &nbsp;<a href="{U_RESTORE_PERMISSIONS}"><img src="{T_THEME_PATH}/images/icon_mini_login.gif" width="12" height="13" alt="*" /> {L_RESTORE_PERMISSIONS}</a><!-- ENDIF -->
-				<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN --> &nbsp;<span style="color: red;">{L_BOARD_DISABLED}</span><!-- ENDIF -->
-				<!-- IF not S_IS_BOT -->
-					<!-- IF S_USER_LOGGED_IN -->
-						<!-- IF S_DISPLAY_PM --> &nbsp;<a href="{U_PRIVATEMSGS}"><img src="{T_THEME_PATH}/images/icon_mini_message.gif" width="12" height="13" alt="*" /> {PRIVATE_MESSAGE_INFO}<!-- IF PRIVATE_MESSAGE_INFO_UNREAD -->, {PRIVATE_MESSAGE_INFO_UNREAD}<!-- ENDIF --></a><!-- ENDIF -->
-					<!-- ELSEIF S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --> &nbsp;<a href="{U_REGISTER}"><img src="{T_THEME_PATH}/images/icon_mini_register.gif" width="12" height="13" alt="*" /> {L_REGISTER}</a>
-					<!-- ENDIF -->
-				<!-- ENDIF -->
-			</td>
-			<td class="genmed" align="{S_CONTENT_FLOW_END}">
-				<a href="{U_FAQ}"><img src="{T_THEME_PATH}/images/icon_mini_faq.gif" width="12" height="13" alt="*" /> {L_FAQ}</a>
-				<!-- IF S_DISPLAY_SEARCH -->&nbsp; &nbsp;<a href="{U_SEARCH}"><img src="{T_THEME_PATH}/images/icon_mini_search.gif" width="12" height="13" alt="*" /> {L_SEARCH}</a><!-- ENDIF -->
-				<!-- IF not S_IS_BOT -->
-					<!-- IF S_DISPLAY_MEMBERLIST -->&nbsp; &nbsp;<a href="{U_MEMBERLIST}"><img src="{T_THEME_PATH}/images/icon_mini_members.gif" width="12" height="13" alt="*" /> {L_MEMBERLIST}</a><!-- ENDIF -->
-					<!-- IF S_USER_LOGGED_IN -->&nbsp; &nbsp;<a href="{U_PROFILE}"><img src="{T_THEME_PATH}/images/icon_mini_profile.gif" width="12" height="13" alt="*" /> {L_PROFILE}</a><!-- ENDIF -->
-				<!-- ENDIF -->
-			</td>
-		</tr>
-		</table>
+			<li id="anb-wiki" ><a href="http://wiki.archlinux.fr">Wiki</a></li>
+			<li id="anb-bugs" ><a href="http://bugs.archlinux.org" title="Lien vers archlinux.org">Bugs</a></li>
+			<li id="anb-aur" ><a href="http://aur.archlinux.org/index.php?setlang=fr" title="Lien vers archlinux.org">AUR</a></li>
+			<li id="anb-download" ><a href="http://www.archlinux.fr/telecharger" title="">Télécharger</a></li>
+			<li id="" ><a href="http://planet.archlinux.fr/" title="">Planète</a></li>
+		</ul>
 	</div>
-
-	<div id="datebar">
-		<table width="100%" cellspacing="0">
-		<tr>
-			<td class="gensmall"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ENDIF --></td>
-			<td class="gensmall" align="{S_CONTENT_FLOW_END}">{CURRENT_TIME}<br /></td>
-		</tr>
-		</table>
-	</div>
-
 </div>
+<br/>
+<div id="dev_nav">
+  <ul>
+    <li><a href="{U_INDEX}">Index<!-- {L_INDEX} --></a></li>
+    <!-- IF not S_IS_BOT -->
+    <!-- IF S_DISPLAY_MEMBERLIST --><li><a href="{U_MEMBERLIST}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
+    <!-- IF S_DISPLAY_SEARCH --><li><a href="{U_SEARCH}">{L_SEARCH}</a></li><!-- ENDIF -->
+    <!-- IF S_USER_LOGGED_IN -->
+    <li><a href="{U_PROFILE}">Profil<!-- {L_PROFILE}--></a></li>
+    <!-- ELSEIF S_REGISTER_ENABLED -->
+    <li><a href="{U_REGISTER}">{L_REGISTER}</a></li>
+    <!-- ENDIF -->
+    <!-- ENDIF -->
+    <!-- IF not S_IS_BOT -->
+    <li><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a></li>
+    <!-- ENDIF -->
+  </ul>
+</div>
+<br/>
+
+
 
 <div id="wrapcentre">
+	<div style="float: {S_CONTENT_FLOW_BEGIN};">
+        	<!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<br/><!-- ENDIF -->
+		{CURRENT_TIME}
+<!-- IF S_USER_LOGGED_IN --><br/>
+		<a href="/ucp.php?i=pm&folder=inbox">Messagerie privée</a><br/><!-- ENDIF -->
+<!-- IF not S_IS_BOT -->
+					<!-- IF S_WATCH_FORUM_LINK -->
+						<a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}">{S_WATCH_FORUM_TITLE}</a>
+					<!-- ENDIF -->
+					<!-- IF U_WATCH_TOPIC -->
+						<a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}">{L_WATCH_TOPIC}</a>
+					<!-- ENDIF -->
+<!-- ENDIF -->
 
+	</div>
 	<!-- IF S_DISPLAY_SEARCH -->
-	<p class="searchbar">
-		<span style="float: {S_CONTENT_FLOW_BEGIN};"><a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a> | <a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a></span>
+	<div style="float: {S_CONTENT_FLOW_END};">
 		<!-- IF S_USER_LOGGED_IN -->
-		<span style="float: {S_CONTENT_FLOW_END};"><a href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a> | <a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a> | <a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></span>
+		<a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a><br/>
+		<a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a><br/>
 		<!-- ENDIF -->
-	</p>
+                <!-- IF not S_IS_BOT and U_MARK_FORUMS -->
+		<a href="{U_MARK_FORUMS}">{L_MARK_FORUMS_READ}</a><br/> 
+		<!-- ENDIF -->
+                <!-- IF not S_IS_BOT and U_MARK_TOPICS -->
+                <a href="{U_MARK_TOPICS}">{L_MARK_TOPICS_READ}</a><br/>
+                <!-- ENDIF -->
+                Messages depuis 
+                <a href="{U_SEARCH_ACTIVE_TOPICS}&st=1">12</a> |
+                <a href="{U_SEARCH_ACTIVE_TOPICS}&st=2">24</a> |
+                <a href="{U_SEARCH_ACTIVE_TOPICS}&st=3">36</a>
+                heures.
+	</div>
 	<!-- ENDIF -->
 
 	<br style="clear: both;" />
-
-	<!-- INCLUDE breadcrumbs.html -->
 
 	<br />
