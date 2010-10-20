@@ -104,6 +104,11 @@ if ($interval && !$auth->acl_get('u_ignoreflood'))
 
 // Define some vars
 $limit_days		= array(0 => $user->lang['ALL_RESULTS'], 1 => $user->lang['1_DAY'], 7 => $user->lang['7_DAYS'], 14 => $user->lang['2_WEEKS'], 30 => $user->lang['1_MONTH'], 90 => $user->lang['3_MONTHS'], 180 => $user->lang['6_MONTHS'], 365 => $user->lang['1_YEAR']);
+$archfr_limit_days = array(0 => $user->lang['ALL_RESULTS'], 
+	1 => "12 " . $user->lang['HOURS'], 
+	2 => "24 " . $user->lang['HOURS'], 
+	3 => "36 " . $user->lang['HOURS'],
+	);
 $sort_by_text	= array('a' => $user->lang['SORT_AUTHOR'], 't' => $user->lang['SORT_TIME'], 'f' => $user->lang['SORT_FORUM'], 'i' => $user->lang['SORT_TOPIC_TITLE'], 's' => $user->lang['SORT_POST_SUBJECT']);
 
 $s_limit_days = $s_sort_key = $s_sort_dir = $u_sort_param = '';
@@ -316,10 +321,12 @@ if ($keywords || $author || $author_id || $search_id || $submit)
 				$sort_days = request_var('st', 7);
 				$sort_by_sql['t'] = 't.topic_last_post_time';
 
-				gen_sort_selects($limit_days, $sort_by_text, $sort_days, $sort_key, $sort_dir, $s_limit_days, $s_sort_key, $s_sort_dir, $u_sort_param);
+				#gen_sort_selects($limit_days, $sort_by_text, $sort_days, $sort_key, $sort_dir, $s_limit_days, $s_sort_key, $s_sort_dir, $u_sort_param);
+				gen_sort_selects($archfr_limit_days, $sort_by_text, $sort_days, $sort_key, $sort_dir, $s_limit_days, $s_sort_key, $s_sort_dir, $u_sort_param);
 				$s_sort_key = $s_sort_dir = '';
 
-				$last_post_time_sql = ($sort_days) ? ' AND t.topic_last_post_time > ' . (time() - ($sort_days * 24 * 3600)) : '';
+				#$last_post_time_sql = ($sort_days) ? ' AND t.topic_last_post_time > ' . (time() - ($sort_days * 24 * 3600)) : '';
+				$last_post_time_sql = ($sort_days) ? ' AND t.topic_last_post_time > ' . (time() - ($sort_days * 12 * 3600)) : '';
 
 				$sql = 'SELECT t.topic_last_post_time, t.topic_id
 					FROM ' . TOPICS_TABLE . " t
