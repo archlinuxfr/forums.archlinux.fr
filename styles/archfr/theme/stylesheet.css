@@ -9,6 +9,11 @@
 
 @import url("../../prosilver/theme/stylesheet.css");
 
+@import url('//archlinux.fr/commun/archnavbar.css');
+#archnavbar .selected a {
+    color: #fff !important;
+}
+
 html, body {
     color: #566579;
     background: #f6f9fc;
