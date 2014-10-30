@@ -1,4 +1,6 @@
 <!-- PHP -->
-require_once('commun/functions.php');
-echo print_arch_favicon();
+include_once('commun/functions.php');
+if (function_exists('print_arch_favicon')) {
+    echo print_arch_favicon();
+}
 <!-- ENDPHP -->
