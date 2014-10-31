@@ -8,6 +8,7 @@
 */
 
 @import url("../../prosilver/theme/stylesheet.css");
+@import url("../../prosilver/theme/responsive.css") only screen and (max-width: 700px);
 
 @import url('//archlinux.fr/commun/archnavbar.css');
 #archnavbar .selected a {
@@ -26,6 +27,7 @@ html, body {
     border: 1px solid #bcd;
     border-radius: 0;
     max-width: none;
+    padding: 15px;
 }
 
 #page-body {
@@ -241,4 +243,25 @@ fieldset.fields1 {
 
 .panel .inner {
     padding: 21px 0;
+}
+
+@media screen and (max-width: 700px) {
+    #wrap {
+        padding: 5px;
+        margin: 0;
+        border: none;
+    }
+
+    .postprofile, .postbody, .search .postbody {
+        width: 100%;
+    }
+
+    #archnavbarlogo {
+        width: 50px !important;
+    }
+
+    #archnavbarlist li a {
+        font-weight: normal !important;
+        font-size: 12px !important;
+    }
 }
