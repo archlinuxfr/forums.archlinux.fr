@@ -1,0 +1,15 @@
+<script type="text/javascript">
+$(function() {
+    $('#postform').submit(function() {
+        var e = $(this).find('#postingbox .error').empty();
+        if (!$(this).find('#subject').val().match(/^\[.+\] .+$/)) {
+            if (!e.length) {
+                e = $('<p>').addClass('error');
+                $(this).find('#postingbox .fields1').prepend(e);
+            }
+            e.text('Le sujet doit être de la forme : "[thème] description" ou "[thème] description (état)"')
+            return false;
+        }
+    });
+});
+</script>
