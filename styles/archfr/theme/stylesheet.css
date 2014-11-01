@@ -20,6 +20,8 @@ html, body {
     background: #f6f9fc;
     margin: 0;
     padding: 0;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
 }
 
 #wrap {
@@ -48,6 +50,7 @@ html, body {
 
 h3 {
     border: none;
+    color: #07b;
 }
 
 .headerbar {
@@ -92,7 +95,12 @@ ul.topiclist .header, table.table1 thead th {
     color: #444;
     text-transform: none;
     font-weight: bold;
-    font-family: inherit;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+}
+
+.forumbg .header a:hover, .forabg .header a:hover, th a:hover {
+    color: #999;
 }
 
 a.forumtitle, a.topictitle {
@@ -145,7 +153,7 @@ ul.topiclist dd {
 .pagination li a, .pagination li a:hover, .pagination li.active span {
     background: #fcfdfe;
     border-color: #b9c5ce;
-    color: inherit;
+    color: #07b;
 }
 
 .pagination li.active span {
@@ -169,12 +177,19 @@ ul.topiclist dd {
 
 .postprofile {
     float: left;
+    width: 18%;
+    color: #566579;
+}
+
+.postprofile strong {
+    color: #444;
 }
 
 .postbody {
     background: #fcfdfe;
     border-left: 1px solid #dfe6ee;
     float: right;
+    width: 80%;
 }
 
 .postprofile, .postbody {
