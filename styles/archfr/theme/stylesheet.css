@@ -198,6 +198,10 @@ ul.topiclist dd {
     padding-bottom: 500em;
 }
 
+#topicreview .postbody {
+    padding: 10px 0 0;
+}
+
 .postprofile dd, .postprofile dt, .postbody h3, .postbody .post-buttons, .postbody .author, .postbody .content {
     padding: 0 10px;
     margin: 0;
