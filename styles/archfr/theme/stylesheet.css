@@ -192,7 +192,7 @@ ul.topiclist dd {
     width: 80%;
 }
 
-.postprofile, .postbody {
+.post .postprofile, .post .postbody {
     padding: 10px 0;
     margin-bottom: -500em;
     padding-bottom: 500em;
