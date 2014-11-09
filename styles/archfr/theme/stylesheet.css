@@ -292,7 +292,7 @@ blockquote, .codebox {
 }
 
 blockquote {
-    background: #f6f9fc;
+    background-color: #f6f9fc;
     border-color: #bcd;
     color: #444;
     border-style: solid;
