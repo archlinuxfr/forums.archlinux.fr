@@ -274,3 +274,27 @@ fieldset.fields1 {
 .error a {
     color: #bc2a4d;
 }
+
+.codebox, .codebox code, code {
+    background: #ebf1f5;
+    border: 1px solid #bcd;
+    color: #222;
+    font-family: monospace;
+}
+
+.codebox code {
+    border: none;
+}
+
+blockquote, .codebox {
+    margin: 10px 15px;
+    padding: 10px;
+}
+
+blockquote {
+    background: #f6f9fc;
+    border-color: #bcd;
+    color: #444;
+    border-style: solid;
+    border-width: 1px 1px 1px 3px;
+}
