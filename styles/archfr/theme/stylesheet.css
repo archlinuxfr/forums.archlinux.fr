@@ -10,6 +10,7 @@
 @import url("../../prosilver/theme/stylesheet.css");
 
 @import url('//archlinux.fr/commun/archnavbar.css');
+@import url('//archlinux.fr/commun/archfr.css');
 
 html, body {
     color: #566579;
