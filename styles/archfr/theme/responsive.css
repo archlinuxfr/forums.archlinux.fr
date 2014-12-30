@@ -9,12 +9,3 @@
 .postprofile, .postbody, .search .postbody {
     width: 100%;
 }
-
-#archnavbarlogo {
-    width: 50px !important;
-}
-
-#archnavbarlist li a {
-    font-weight: normal !important;
-    font-size: 12px !important;
-}
