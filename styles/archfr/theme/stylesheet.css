@@ -191,8 +191,6 @@ ul.topiclist dd {
 
 .post .postprofile, .post .postbody {
     padding: 10px 0;
-    margin-bottom: -500em;
-    padding-bottom: 500em;
 }
 
 #topicreview .postbody {
@@ -227,6 +225,11 @@ ul.topiclist dd {
     border-style: solid;
     padding: 5px;
     position: relative;
+        height: 11px;
+}
+
+.back2top .top {
+        margin-right: 0;
 }
 
 .panel {
@@ -296,3 +299,4 @@ blockquote {
     border-style: solid;
     border-width: 1px 1px 1px 3px;
 }
+
