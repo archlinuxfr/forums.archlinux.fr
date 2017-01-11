@@ -1,11 +1,13 @@
 @import url("../../prosilver/theme/responsive.css");
 
-#wrap {
-    padding: 5px;
-    margin: 0;
-    border: none;
-}
+@media (max-width: 700px) {
+    #wrap {
+        padding: 5px;
+        margin: 0;
+        border: none;
+    }
 
-.postprofile, .postbody, .search .postbody {
-    width: 100%;
+    .postprofile, .postbody, .search .postbody {
+        width: 100%;
+    }
 }

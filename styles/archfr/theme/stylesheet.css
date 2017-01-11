@@ -8,6 +8,7 @@
 */
 
 @import url("../../prosilver/theme/stylesheet.css");
+@import url("responsive.css");
 
 @import url('//archlinux.fr/commun/archnavbar.css');
 @import url('//archlinux.fr/commun/archfr.css');
@@ -21,7 +22,7 @@ html, body {
     font-size: 10px;
 }
 
-#wrap {
+.wrap {
     margin: 30px 40px;
     border: 1px solid #bcd;
     border-radius: 0;
