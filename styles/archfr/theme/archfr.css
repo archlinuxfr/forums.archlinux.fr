@@ -7,12 +7,6 @@
     --------------------------------------------------------------
 */
 
-@import url("../../prosilver/theme/stylesheet.css");
-@import url("responsive.css");
-
-@import url('//archlinux.fr/commun/archnavbar.css');
-@import url('//archlinux.fr/commun/archfr.css');
-
 html, body {
     color: #566579;
     background: #f6f9fc;
@@ -175,7 +169,7 @@ ul.topiclist dd {
 
 .postprofile {
     float: left;
-    width: 18%;
+    width: 17%;
     color: #566579;
 }
 
@@ -190,7 +184,11 @@ ul.topiclist dd {
     width: 80%;
 }
 
-.post .postprofile, .post .postbody {
+.post .postprofile {
+    padding: 10px 1px 10px 8px;
+}
+
+.post .postbody {
     padding: 10px 0;
 }
 
@@ -198,7 +196,11 @@ ul.topiclist dd {
     padding: 10px 0 0;
 }
 
-.postprofile dd, .postprofile dt, .postbody h3, .postbody .post-buttons, .postbody .author, .postbody .content {
+.postprofile dd, .postprofile dt {
+    margin: 0;
+}
+
+.postbody h3, .postbody .post-buttons, .postbody .author, .postbody .content {
     padding: 0 10px;
     margin: 0;
 }
