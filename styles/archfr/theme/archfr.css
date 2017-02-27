@@ -1,0 +1,303 @@
+/*  ArchFR Style Sheet
+    --------------------------------------------------------------
+	Style name:			archfr
+	Based on style:		prosilver
+	Original author:	Mickael BLATIERE ( http://blizzart.net/ )
+	Modified by:
+    --------------------------------------------------------------
+*/
+
+@import url("../../prosilver/theme/stylesheet.css");
+@import url("responsive.css");
+
+@import url('//archlinux.fr/commun/archnavbar.css');
+@import url('//archlinux.fr/commun/archfr.css');
+
+html, body {
+    color: #566579;
+    background: #f6f9fc;
+    margin: 0;
+    padding: 0;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+}
+
+.wrap {
+    margin: 30px 40px;
+    border: 1px solid #bcd;
+    border-radius: 0;
+    max-width: none;
+    padding: 15px;
+}
+
+#page-body {
+    border-style: solid none;
+    border-width: 2px 0;
+    padding: 14px 0;
+}
+
+.headerspace {
+    margin-bottom: 14px;
+}
+
+.online-list {
+    border-top-style: solid;
+    border-top-width: 2px;
+    padding: 7px 0;
+}
+
+h3 {
+    border: none;
+    color: #07b;
+}
+
+.headerbar {
+    display: none;
+}
+
+.navbar {
+    background: transparent;
+}
+
+a {
+    color: #07b;
+}
+
+a:hover {
+    color: #999;
+}
+
+.forabg, .forumbg, table.table1 {
+    background: #ebf1f5;
+    border-radius: 0;
+    border-color: #b9c5ce #d9e1e7;
+    border-style: solid;
+    border-width: 1px;
+    padding: 0;
+}
+
+table.table1 {
+    border-top: none;
+    border-bottom: none;
+}
+
+.forabg {
+    margin-bottom: 21px;
+}
+
+ul.topiclist .header, table.table1 thead th {
+    padding: 7px;
+}
+
+.forumbg .header a, .forabg .header a, th a, li.header dt, li.header dd, table.table1 thead th {
+    color: #444;
+    text-transform: none;
+    font-weight: bold;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 13px;
+}
+
+.forumbg .header a:hover, .forabg .header a:hover, th a:hover {
+    color: #999;
+}
+
+a.forumtitle, a.topictitle {
+    padding-top: 7px;
+    display: inline-block;
+}
+
+ul.forums, li.row:hover, .bg1, .bg2, table.table1 tbody tr:hover {
+    background: #fcfdfe;
+}
+
+li.row, table.table1 tbody tr {
+    border-bottom: none;
+    border-top-color: #dfe6ee;
+}
+
+ul.topiclist dd {
+    border: none;
+}
+
+.forum-title {
+    margin: 0 0 14px 0;
+}
+
+.action-bar, .display-options {
+    padding: 7px 0;
+}
+
+.action-bar.top {
+    border-top-style: dotted;
+    border-top-width: 1px;
+}
+
+.action-bar.bottom {
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+}
+
+.button, .search-box .inputbox, .search-box a.button, a.button1, input.button1, input.button3, a.button2, input.button2 {
+    border-radius: 0;
+    color: #444;
+    border-color: #444;
+}
+
+.button:hover, .search-box button.search-icon:hover, .search-box .inputbox:hover, .search-box a.button:hover, a.button1:hover, input.button1:hover, input.button3:hover, a.button2:hover, input.button2:hover {
+    color: #07b;
+    border-color: #07b;
+}
+
+.pagination li a, .pagination li a:hover, .pagination li.active span {
+    background: #fcfdfe;
+    border-color: #b9c5ce;
+    color: #07b;
+}
+
+.pagination li.active span {
+    font-weight: bold;
+}
+
+.pagination li a:hover, .pagination li.active span {
+    background: #ebf1f5;
+}
+
+.post {
+    background: #f6f9fc;
+    border-color: #b9c5ce #d9e1e7;
+    border-radius: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-bottom: none;
+    padding: 0;
+    overflow: hidden;
+}
+
+.postprofile {
+    float: left;
+    width: 18%;
+    color: #566579;
+}
+
+.postprofile strong {
+    color: #444;
+}
+
+.postbody {
+    background: #fcfdfe;
+    border-left: 1px solid #dfe6ee;
+    float: right;
+    width: 80%;
+}
+
+.post .postprofile, .post .postbody {
+    padding: 10px 0;
+}
+
+#topicreview .postbody {
+    padding: 10px 0 0;
+}
+
+.postprofile dd, .postprofile dt, .postbody h3, .postbody .post-buttons, .postbody .author, .postbody .content {
+    padding: 0 10px;
+    margin: 0;
+}
+
+.postprofile dd:last-child {
+    margin-bottom: 10px;
+}
+
+.postbody .content {
+    margin: 15px 0;
+}
+
+.postbody .signature {
+    color: #566579;
+    font-style: italic;
+    margin: 0 10px;
+    padding: 15px 0 10px 0;
+    width: auto;
+}
+
+.back2top {
+    background: #ebf1f5;
+    border-color: #cad7e1;
+    border-width: 1px 0;
+    border-style: solid;
+    padding: 5px;
+    position: relative;
+        height: 11px;
+}
+
+.back2top .top {
+        margin-right: 0;
+}
+
+.panel {
+    background: #ebf1f5;
+    border-color: #b9c5ce #d9e1e7;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0;
+    padding: 0 18px;
+}
+
+fieldset.fields1 {
+    padding: 12px 18px;
+}
+
+.content h2, .panel h2, .panel h3 {
+    border: none;
+    color: #444;
+    font-weight: bold;
+    text-transform: none;
+}
+
+#tabs .tab > a, #navigation #active-subsection a {
+    background: #f6f9fc;
+}
+
+#tabs .activetab > a, #tabs .activetab > a:hover, #tabs .tab > a:hover, #navigation a, #navigation a:hover {
+    background: #ebf1f5;
+}
+
+#tabs .tab > a:hover, #navigation #active-subsection a, #navigation #active-subsection a:hover, #navigation a:hover {
+    color: #07b;
+}
+
+.member-search {
+    padding: 5px;
+}
+
+.panel .inner {
+    padding: 21px 0;
+}
+
+.error a {
+    color: #bc2a4d;
+}
+
+.codebox, .codebox code, code {
+    background: #ebf1f5;
+    border: 1px solid #bcd;
+    color: #222;
+    font-family: monospace;
+}
+
+.codebox code {
+    border: none;
+}
+
+blockquote, .codebox {
+    margin: 10px 15px;
+    padding: 10px;
+}
+
+blockquote {
+    background-color: #f6f9fc;
+    border-color: #bcd;
+    color: #444;
+    border-style: solid;
+    border-width: 1px 1px 1px 3px;
+}
+
